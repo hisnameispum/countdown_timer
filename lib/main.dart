@@ -75,6 +75,7 @@ class _PomodoroState extends State<Pomodoro> {
               ),
               Expanded(
                 child: CircularPercentIndicator(
+                  circularStrokeCap: CircularStrokeCap.round,
                   percent: percent,
                   animation: true,
                   animateFromLastPercent: true,
