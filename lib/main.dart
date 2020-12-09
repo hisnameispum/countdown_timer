@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:percent_indicator/circular_percent_indicator.dart';
 
 void main() => runApp(MaterialApp(
   debugShowCheckedModeBanner: false,
@@ -33,14 +34,32 @@ class _PomodoroState extends State<Pomodoro> {
               Padding(
                 padding: EdgeInsets.only(top: 25),
                 child: Text(
-                  "Pomodoro Timer",
+                  "Nurture Timer",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     color: Colors.white,
                     fontSize: 35,
                   ),
                 ),
-              )
+              ),
+              Expanded(
+                child: CircularPercentIndicator(
+                  percent: percent,
+                  animation: true,
+                  animateFromLastPercent: true,
+                  radius: 250,
+                  lineWidth: 10,
+                  progressColor: Colors.white,
+                  center: Text(
+                    "$timeInMinute",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 60,
+                    ),
+                  ),
+
+                ),
+              ),
             ],
           ),
         ),
